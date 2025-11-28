@@ -1,0 +1,27 @@
+services:
+  web:
+    build: .
+    ports:
+    - 80:5000
+    env_file:
+      - .env
+ 
+  app:
+    build: .
+    env_file:
+      - .env
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
+    ports:
+    - "5432:5432"
+  
+volumes:
+  pgdata:

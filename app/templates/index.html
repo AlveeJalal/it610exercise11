@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<table class="table">
+    <style>
+        table, th, td {
+      border: 1px solid black; /* Sets a 1px solid black border */
+    }
+    </style>
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Scientific Name</th>
+        <th>Color</th>
+    </tr>
+</thead>
+
+{% for frog in frogs %}
+
+<tr>
+
+    <td>{{ frog[0] }}</td>
+<td>{{ frog[1] }}</td>
+<td>{{ frog[2] }}</td>
+<td>{{ frog[3] }}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+</html>

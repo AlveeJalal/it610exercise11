@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS ElFroggodb;
+
+\c ElFroggodb;
+
+CREATE USER ElFroggo WITH PASSWORD 'd3v3nv2003!';
+
+CREATE TABLE IF NOT EXISTS Frogs (
+    ID Int NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(26),
+    ScientificName VARCHAR(50),
+    Color VARCHAR(26)
+    PRIMARY KEY(ID)
+)
